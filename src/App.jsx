@@ -5,18 +5,16 @@ import Section from './components/Section'
 import SkillBar from './components/SkillBar'
 import ProjectCard from './components/ProjectCard'
 import Footer from './components/Footer'
+import TopNav from './components/TopNav'
 import { profile, skills, projects, publications, tools } from './portfolioData'
 
 function App() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
-      {/* Header */}
       <Header name={profile.name} title={profile.title} links={profile.links} />
 
-      {/* Hero */}
       <Hero name={profile.name} title={profile.title} summary={profile.summary} />
 
-      {/* About */}
       <Section
         id="about"
         kicker="About"
@@ -45,7 +43,6 @@ function App() {
         </div>
       </Section>
 
-      {/* Projects */}
       <Section
         id="projects"
         kicker="Projects"
@@ -59,7 +56,6 @@ function App() {
         </div>
       </Section>
 
-      {/* Skills */}
       <Section id="skills" kicker="Skills" title="What I work with">
         <div className="grid md:grid-cols-2 gap-6">
           {skills.map((s) => (
@@ -68,7 +64,6 @@ function App() {
         </div>
       </Section>
 
-      {/* Publications */}
       <Section id="publications" kicker="Writing" title="Publications & Posts">
         <div className="grid sm:grid-cols-2 gap-6">
           {publications.map((p) => (
@@ -80,7 +75,6 @@ function App() {
         </div>
       </Section>
 
-      {/* Contact */}
       <Section id="contact" kicker="Contact" title="Let’s collaborate">
         <div className="grid md:grid-cols-3 gap-6 items-center">
           <div className="md:col-span-2">
@@ -101,8 +95,9 @@ function App() {
         </div>
       </Section>
 
-      {/* Footer */}
       <Footer />
+
+      <TopNav />
     </div>
   )
 }
